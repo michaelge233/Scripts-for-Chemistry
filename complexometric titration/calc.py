@@ -3,14 +3,14 @@ import tkinter.font as tf
 import ctypes
 
 #初始化dll
-lib=ctypes.CDLL("calc.dll")      #加载dll
+lib=ctypes.CDLL("tree.dll")      #加载dll，必须安装好visual c++，否则报错
 lib.calc.restype=ctypes.c_double #声明相关函数返还的数据类型
 lib.get_lgK.restype=ctypes.c_double
 lib.get_lgaY_H.restype=ctypes.c_double
 lib.get_lgaY_M.restype=ctypes.c_double
 lib.get_lgaM_OH.restype=ctypes.c_double
 lib.get_lgaM_L.restype=ctypes.c_double
-lib.begin()                      #dll内部初始化（读取数据文件，建立数据结构）
+lib.begin()                      #dll内部初始化（读取数据文件，建立数据结构），begin是dll内部的函数
 
 #初始化标签和输入输出框
 win=Tk()
